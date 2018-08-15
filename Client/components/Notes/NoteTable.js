@@ -33,7 +33,7 @@ const NoteTable = (props) => {
 
     return (
         <div>
-            <table className="table table-bordered table-striped table-hover">
+            <table className="table table-bordered table-striped table-hover" id="table-notes">
                 <thead>
                     <tr>
                         <th></th>

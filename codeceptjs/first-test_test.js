@@ -23,7 +23,22 @@ Scenario('US-1_1: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma not
     I.waitForText('Fazer feira', 5);
     I.waitForText('maçã, abacate, banana, cenoura', 5);
 });
-Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu alterar o título, conteúdo e tags de uma nota, ENTÂO o sistema deve mostrar a nota na lista com os novos dados', (I) => {
+Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma nota sem preencher o título, ENTÂO o sistema deve mostrar que o título é obrigatório', (I) => {
+
+    I.say('DADO QUE');
+    I.waitForElement('#add');
+
+    I.say('QUANDO');
+    I.click('#add');
+    I.see('New Note');
+
+    I.fillField('input[name=title]', '');
+    I.click('#save');
+
+    I.say('ENTÂO');
+    I.waitForText('Title is required', 5);
+});
+Scenario('US-1_3: DADO que eu estou na tela inicial, QUANDO eu alterar o título, conteúdo e tags de uma nota, ENTÂO o sistema deve mostrar a nota na lista com os novos dados', (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('.edit-note:first-child');
@@ -42,6 +57,44 @@ Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu alterar o título
     I.say('ENTÂO');
     I.waitForText('Ir na feira', 5);
     I.waitForText('batata, aipim', 5);
+});
+Scenario('US-1_4: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota pelo seu título, ENTÂO o sistema deve mostrar a nota na lista', (I) => {
 
-    pause();
+    I.say('DADO QUE');
+    I.waitForElement('#input_search');
+  
+    I.say('QUANDO');
+    I.fillField('#input_search', 'feira');
+    I.click('#search');
+
+    I.say('ENTÂO');
+    I.waitForText('Ir na feira', 5);
+    I.waitForText('batata, aipim', 5);
+
+});
+Scenario('US-1_5: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota inexistente, ENTÂO nenhum resultado deve ser exibido na lista', (I) => {
+
+    I.say('DADO QUE');
+    I.waitForElement('#input_search');
+  
+    I.say('QUANDO');
+    I.fillField('#input_search', 'abcdfghij');
+    I.click('#search');
+
+    I.say('ENTÂO');
+    I.seeNumberOfElements('#table-notes td', 0);
+});
+
+Scenario('US-1_6: DADO que eu estou na tela inicial, QUANDO eu excluir uma nota, ENTÂO a nota não deve ser exibida na lista', (I) => {
+
+    I.say('DADO QUE');
+    I.waitForText('feira');
+
+    I.say('QUANDO');
+    I.click('.delete-note');
+    I.acceptPopup();
+
+    I.say('ENTÂO');
+    I.dontSee('feira');
+    I.seeNumberOfElements('#table-notes td', 0);
 });

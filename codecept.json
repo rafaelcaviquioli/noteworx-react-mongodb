@@ -14,7 +14,7 @@
   "include": {
     "I": "./codeceptjs/steps_file.js"
   },
-  "bootstrap": false,
+  "bootstrap": "./bootstrap.js",
   "mocha": {},
   "name": "noteworx-react-mongodb",
   "translation": "pt-BR"
