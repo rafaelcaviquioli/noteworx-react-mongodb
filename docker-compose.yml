@@ -27,6 +27,14 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 1234
     volumes:
       - ./mongo-data:/data/db
+  codeceptjs:
+    image: node:8.9.4
+    working_dir: /home/node
+    volumes:
+      - ./:/home/node
+    depends_on:
+      - client
+      - selenium-server
   selenium-server:
     image: selenium/standalone-chrome-debug
     ports:

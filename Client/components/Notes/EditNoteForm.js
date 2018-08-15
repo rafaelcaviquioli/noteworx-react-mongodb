@@ -172,14 +172,14 @@ class EditNoteForm extends Component {
                     </div>
                     <div className="form-group row">
                         <div className="col-sm-4 col-md-3 col-xl-2 ml-auto">
-                            <button type="submit" className="btn btn-success btn-block">
+                            <button type="submit" className="btn btn-success btn-block" id="save">
                                 <i className="fa fa-save mr-2"></i>Save
                             </button>
                         </div>
                         <div className="col-sm-4 col-md-3 col-xl-2">
                             <button className="btn btn-danger btn-block mt-2 mt-sm-0"
                                 onClick={this.props.onCloseModal}
-                                type="button">
+                                type="button" id="cancel">
                                 <i className="fa fa-remove mr-2"></i>Cancel
                             </button>
                         </div>

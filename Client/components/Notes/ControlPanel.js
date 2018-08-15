@@ -23,14 +23,14 @@ class ControlPanel extends Component {
             <div>
                 <div className="input-group input-group-lg">
                     <span className="input-group-btn">
-                        <button className="btn btn-primary" type="button" onClick={this.props.openAddNoteModal}>
-                            <i className="fa fa-plus"></i>
+                        <button className="btn btn-primary" type="button" onClick={this.props.openAddNoteModal} id="add">
+                            <i className="fa fa-plus"></i> Adicionar
                         </button>
                     </span>
                     <input type="text" className="form-control" placeholder="Search for note by title ..." value={this.state.title} onChange={this.onSearchTitleChanged} />
-                    <span className="input-group-btn">
+                    <span className="input-group-btn" id="search">
                         <button className="btn btn-primary" type="button" onClick={() => this.props.onFindNotes(this.state.title)} >
-                            <i className="fa fa-search"></i>
+                            <i className="fa fa-search"></i> Pesquisar
                         </button>
                     </span>
                 </div>        

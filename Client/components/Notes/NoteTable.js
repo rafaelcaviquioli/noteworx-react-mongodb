@@ -12,10 +12,10 @@ const NoteTable = (props) => {
             <tr key={note.id.toString()} className={classes}>
                 <td className="align-middle" style={{width: '80px'}}>
                     <div className="d-flex flex-row">
-                        <a data-toggle="tooltip" data-placement="top" title="Edit Note" className="p-2" onClick={() => props.onOpenEditNoteModal(note.id)}>
+                        <a data-toggle="tooltip" data-placement="top" title="Edit Note" className="p-2 edit-note" onClick={() => props.onOpenEditNoteModal(note.id)}>
                             <i className="fa fa-pencil fa-lg text-primary"></i>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Delete Note" className="p-2" onClick={() => props.onDeleteNote(note.id)}>
+                        <a data-toggle="tooltip" data-placement="top" title="Delete Note" className="p-2 delete-note" onClick={() => props.onDeleteNote(note.id)}>
                             <i className="fa fa-trash fa-lg text-danger"></i>
                         </a>
                     </div>                

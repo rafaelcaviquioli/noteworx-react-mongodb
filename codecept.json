@@ -1,0 +1,21 @@
+{
+  "tests": "./codeceptjs/*test.js",
+  "timeout": 10000,
+  "output": "./codeceptjs/output",
+  "helpers": {
+    "WebDriverIO": {
+      "host": "selenium-server",
+      "url": "http://client:9000",
+      "browser": "chrome",
+      "restart": false,
+      "windowSize": "1024x768"
+    }
+  },
+  "include": {
+    "I": "./codeceptjs/steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "noteworx-react-mongodb",
+  "translation": "pt-BR"
+}
