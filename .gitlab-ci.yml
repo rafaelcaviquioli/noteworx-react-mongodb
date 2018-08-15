@@ -8,10 +8,12 @@ e2e:
     - docker:dind
   stage: test
   before_script:
+    - mkdir codeceptjs/snapshots/
+    - mkdir codeceptjs/output-error/
     - docker-compose run codeceptjs npm install
   script:
     - docker-compose run --rm codeceptjs ./node_modules/.bin/codeceptjs run --steps
   artifacts:
     paths:
       - codeceptjs/output-error/
-      - codeceptjs/snapshots/doc/
+      - codeceptjs/snapshots/
