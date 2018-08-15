@@ -9,7 +9,7 @@
 # production
 /build
 /public
-
+mongo-data
 # misc
 .DS_Store
 .env.local
