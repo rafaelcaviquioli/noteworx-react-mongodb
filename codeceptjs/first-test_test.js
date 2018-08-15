@@ -37,6 +37,7 @@ Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma not
 
     I.say('ENTÂO');
     I.waitForText('Title is required', 5);
+    I.saveScreenshot('../snapshots/title_is_required.png');
 });
 Scenario('US-1_3: DADO que eu estou na tela inicial, QUANDO eu alterar o título, conteúdo e tags de uma nota, ENTÂO o sistema deve mostrar a nota na lista com os novos dados', (I) => {
 
