@@ -1,0 +1,13 @@
+sudo: required
+addons:
+  artifacts:
+    paths:
+      - codeceptjs/output-error/
+      - codeceptjs/snapshots/
+before_install:
+  - mkdir codeceptjs/snapshots/
+  - mkdir codeceptjs/output-error/
+install:
+  - docker-compose run codeceptjs npm install
+script:
+  - docker-compose run --rm codeceptjs ./node_modules/.bin/codeceptjs run --steps
