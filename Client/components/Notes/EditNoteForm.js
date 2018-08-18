@@ -158,10 +158,7 @@ class EditNoteForm extends Component {
                 </div>
                 {validationErrorSummary}
                 <form onSubmit={this.onSave} className="mt-2">
-                    <div className="form-group">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" className="form-control" name="title" autoFocus onChange={this.onTitleChange} value={this.state.title}/>
-                    </div>
+
                     <div className="form-group">
                         <label htmlFor="content">Content</label>
                         <textarea className="form-control" name="content" rows="3" onChange={this.onContentChange} value={this.state.content}></textarea>
