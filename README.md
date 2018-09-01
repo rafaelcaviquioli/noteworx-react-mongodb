@@ -10,3 +10,5 @@ $ docker-compose run --rm codeceptjs ./node_modules/.bin/codeceptjs run --steps
 ## Gitlab CI
 [![pipeline status](https://gitlab.com/rafaelcaviquioli/note-worx-ci/badges/master/pipeline.svg)](https://gitlab.com/rafaelcaviquioli/note-worx-ci/commits/master)
 
+
+test
