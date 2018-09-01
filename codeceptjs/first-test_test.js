@@ -1,4 +1,6 @@
-Feature('User-Story-1: Eu como usuário, preciso guardar notas em algum lugar, para que não esqueça de coisas que tenho a fazer.');
+Feature(`User-Story-1:
+Eu como usuário, preciso guardar notas em algum lugar,
+para que não esqueça de coisas que tenho a fazer.`);
 
 Before((I) => {
     I.amOnPage('/');
@@ -6,7 +8,10 @@ Before((I) => {
     I.see('NoteWorx');
 });
 
-Scenario('US-1_1: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma nota preenchendo o título, conteúdo e tags, ENTÃO o sistema deve mostrar a nota na lista', (I) => {
+Scenario(`US-1_1:
+    DADO que eu estou na tela inicial,
+    QUANDO eu cadastrar uma nota preenchendo o título, conteúdo e tags,
+    ENTÃO o sistema deve mostrar a nota na lista`, (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('#add');
@@ -23,7 +28,10 @@ Scenario('US-1_1: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma not
     I.waitForText('Fazer feira', 5);
     I.waitForText('maçã, abacate, banana, cenoura', 5);
 });
-Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma nota sem preencher o título, ENTÃO o sistema deve mostrar que o título é obrigatório', (I) => {
+Scenario(`US-1_2:
+    DADO que eu estou na tela inicial,
+    QUANDO eu cadastrar uma nota sem preencher o título,
+    ENTÃO o sistema deve mostrar que o título é obrigatório`, (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('#add');
@@ -39,7 +47,10 @@ Scenario('US-1_2: DADO que eu estou na tela inicial, QUANDO eu cadastrar uma not
     I.waitForText('Title is required', 5);
     I.saveScreenshot('../snapshots/title_is_required.png');
 });
-Scenario('US-1_3: DADO que eu estou na tela inicial, QUANDO eu alterar o título, conteúdo e tags de uma nota, ENTÃO o sistema deve mostrar a nota na lista com os novos dados', (I) => {
+Scenario(`US-1_3:
+    DADO que eu estou na tela inicial,
+    QUANDO eu alterar o título, conteúdo e tags de uma nota,
+    ENTÃO o sistema deve mostrar a nota na lista com os novos dados`, (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('.edit-note:first-child');
@@ -59,7 +70,10 @@ Scenario('US-1_3: DADO que eu estou na tela inicial, QUANDO eu alterar o título
     I.waitForText('Ir na feira', 5);
     I.waitForText('batata, aipim', 5);
 });
-Scenario('US-1_4: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota pelo seu título, ENTÃO o sistema deve mostrar a nota na lista', (I) => {
+Scenario(`US-1_4:
+         DADO que eu estou na tela inicial,
+         QUANDO eu buscar uma nota pelo seu título,
+         ENTÃO o sistema deve mostrar a nota na lista`, (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('#input_search');
@@ -73,7 +87,10 @@ Scenario('US-1_4: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota p
     I.waitForText('batata, aipim', 5);
 
 });
-Scenario('US-1_5: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota inexistente, ENTÃO nenhum resultado deve ser exibido na lista', (I) => {
+Scenario(`US-1_5:
+    DADO que eu estou na tela inicial,
+    QUANDO eu buscar uma nota inexistente,
+    ENTÃO nenhum resultado deve ser exibido na lista`, (I) => {
 
     I.say('DADO QUE');
     I.waitForElement('#input_search');
@@ -86,7 +103,10 @@ Scenario('US-1_5: DADO que eu estou na tela inicial, QUANDO eu buscar uma nota i
     I.seeNumberOfElements('#table-notes td', 0);
 });
 
-Scenario('US-1_6: DADO que eu estou na tela inicial, QUANDO eu excluir uma nota, ENTÃO a nota não deve ser exibida na lista', (I) => {
+Scenario(`US-1_6:
+    DADO que eu estou na tela inicial,
+    QUANDO eu excluir uma nota,
+    ENTÃO a nota não deve ser exibida na lista`, (I) => {
 
     I.say('DADO QUE');
     I.waitForText('feira');
